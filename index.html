@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Huấn Hà</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- Nút Đăng nhập và Đăng ký -->
+    <div class="auth-buttons">
+        <a href="#login" class="auth-btn" id="login-btn">Đăng nhập</a>
+        <a href="#register" class="auth-btn" id="register-btn">Đăng ký</a>
+    </div>
+<!-- Phần tử âm thanh tự động phát -->
+<audio id="backgroundMusic" autoplay loop>
+    <source src="audio/your-music-file.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ phát nhạc.
+</audio>
+    <!-- Hiệu ứng particles -->
+    <div id="particles-js"></div>
+
+    <!-- Khung menu chính -->
+    <div class="menu">
+        <h1 class="glow-text">SHOP POCO EX</h1>
+        <marquee class="scrolling-text">Chào Các Thương đế Đã Đến Với Shop Của Mình Nhé Hãy Tham Khảo Và ủng hộ tớ nhé 🍁 </marquee>
+
+        <!-- Vùng cuộn cho bảng giá files -->
+        <div class="scroll-container">
+            <div class="pricing">
+                <!-- File 1 -->
+                <div class="pricing-item">
+                    <img src="https://i.imgur.com/jURokpN.png" alt="File 1">
+                    <p>Aimlock Stx - 100,000 VND</p>
+                    <button class="buy-btn" onclick="showPaymentInfo('File A', '100,000 VND')">Mua Ngay</button>
+                </div>
+
+                <!-- File 2 -->
+                <div class="pricing-item">
+                    <img src="https://i.imgur.com/q358ZVI.png" alt="File 2">
+                    <p>File B - 200,000 VND</p>
+                    <button class="buy-btn" onclick="showPaymentInfo('File B', '200,000 VND')">Mua Ngay</button>
+                </div>
+
+                <!-- File 3 -->
+                <div class="pricing-item">
+                    <img src="https://i.imgur.com/R9JT5ev.png" alt="File 3">
+                    <p>File C - 300,000 VND</p>
+                    <button class="buy-btn" onclick="showPaymentInfo('File C', '300,000 VND')">Mua Ngay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Hộp thông báo thanh toán -->
+<div class="payment-modal hidden" id="paymentModal">
+    <div class="payment-content">
+        <h3>Thông Tin Thanh Toán</h3>
+        <p><strong>Tên File:</strong> <span id="modalFileName">File Name</span></p>
+        <p><strong>Giá:</strong> <span id="modalFilePrice">0 VND</span></p>
+        <p><strong>Ngân Hàng:</strong> XYZ - 123456789 - Nguyễn Văn A</p>
+        <p><strong>Ví Momo:</strong> 0987654321 - Nguyễn Văn A</p>
+        <p><strong>PayPal:</strong> email@example.com</p>
+        <button class="close-btn" onclick="closePaymentModal()">Đóng</button>
+    </div>
+</div>
+    <!-- Liên kết mạng xã hội -->
+    <div class="social-links">
+        <h3>Liên Hệ Với Chúng Tôi</h3>
+        <div class="links">
+            <a href="https://www.facebook.com/" target="_blank" class="social-btn facebook">
+                <i class="fab fa-facebook"></i> Facebook
+            </a>
+            <a href="https://zalo.me/" target="_blank" class="social-btn zalo">
+                <i class="fas fa-comment"></i> Zalo
+            </a>
+            <a href="https://telegram.org/" target="_blank" class="social-btn telegram">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank" class="social-btn tiktok">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+        </div>
+    </div>
+
+<!-- Thông báo chào mừng -->
+<div class="welcome-popup hidden" id="welcomePopup">
+    <div class="popup-content">
+        <img src="https://i.imgur.com/h34b5ib.png" alt="Huấn" class="popup-image">
+        <div class="popup-text">
+            <marquee behavior="scroll" direction="left">
+                <h3>Chào Các Thương đế Của Huấn Nhé 🫶</h3>
+            </marquee>
+            <p>Chúc bạn một ngày tốt lành! Hãy khám phá các sản phẩm của chúng tôi.</p>
+        </div>
+        <button class="close-btn" onclick="closeWelcomePopup()">Đóng</button>
+    </div>
+</div>
+    <!-- Chữ watermark -->
+    <footer>
+        <p class="watermark">© 2024 Cửa hàng bán files. Bản quyền thuộc về chúng tôi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Particles.js loaded!');
+        });
+    </script>
+</body>
+</html>
